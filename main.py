@@ -22,7 +22,7 @@ async def say_hello(name: str):
 AUDIO_PATH = "file.mp3"
 
 def get_song(task_id: str):
-    API_KEY = "61bae17e319aa548fefced575ab52883926eca0a84b5f58be834f7afae65d2cd"
+    API_KEY = SOME_API
     GET_TASK_ENDPOINT = f"https://api.piapi.ai/api/v1/task/{task_id}"
     headers = {"X-API-KEY": API_KEY}
 
