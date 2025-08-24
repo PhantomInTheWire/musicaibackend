@@ -1,29 +1,15 @@
 # Music AI Backend
 
-A FastAPI-based backend for AI-powered music generation and content processing.
+This project delivers an AI-driven music generation system using **FastAPI** for the backend. It leverages advanced AI tools to create custom songs from user-defined topics and genres.
 
-## Features
-- **Lyrics Generation**: Utilizes CrewAI agents with LangChain and Groq LLM for topic research and genre-specific lyrics creation.
-- **Music Synthesis**: Integrates with Suno AI API for generating custom audio tracks from lyrics.
-- **Web Scraping**: Employs custom tools for content scraping to enhance research tasks.
-- **Audio Management**: Downloads and serves MP3 files via RESTful endpoints.
+The core functionality revolves around generating lyrics through intelligent agents powered by *CrewAI* and *LangChain*. These agents research topics and craft genre-specific lyrics, ensuring high-quality content.
 
-## Architecture
-- **main.py**: FastAPI application handling endpoints like `/audio` for music generation workflow.
-- **crew.py**: Manages CrewAI crew with agents (web_researcher, lyrics_creator) and tasks for research and lyrics.
-- **tasks.py**: Defines CrewAI tasks for web research and lyrics creation with specific prompts.
-- **custom_tools/**: Contains `suno_ai_tool.py` for AI music API interactions and `scraper_tool.py` for data scraping.
+Music synthesis is handled via the *Suno AI API*, which transforms lyrics into audio tracks. The system also includes web scraping capabilities to gather relevant data for enhanced research.
 
-## Workflow
-1. Receive topic and genre via `/audio` endpoint.
-2. Execute CrewAI workflow to generate lyrics based on research.
-3. Submit lyrics to Suno AI API for music generation.
-4. Poll API for completion and download audio file.
-5. Serve the generated MP3 as a response.
+Key components include `main.py` for API endpoints, `crew.py` for agent management, and custom tools in the `custom_tools/` directory. Dependencies such as `FastAPI`, `CrewAI`, and `Requests` are essential for operation.
 
-## Dependencies
-- FastAPI, CrewAI, LangChain, Requests, python-dotenv.
-- Requires API keys for Groq and Suno AI.
+To use, execute `python main.py` and query the `/audio` endpoint with parameters like `topic` and `genre`. The process involves research, lyrics creation, API submission, and audio delivery.
 
-## Usage
-Run `main.py` to start the server. Access `/audio?topic=example&genre=pop` to generate music.
+*Note: API keys for Groq and Suno AI are required for full functionality.*
+
+- Ghost
